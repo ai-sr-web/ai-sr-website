@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-sr-website.ai-sr-webadmin.workers.dev/sitemap.xml
