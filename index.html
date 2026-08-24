@@ -204,7 +204,7 @@
   <section id="greeting" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-10 items-start">
 
-      <!-- 代表写真エリア（すっきりと細い枠線に調整） -->
+      <!-- 代表写真エリア -->
       <div class="w-full md:w-1/3 pt-2">
         <div class="bg-white rounded-xl p-2 border border-gray-200 shadow-sm overflow-hidden">
           <img src="image003.jpg" alt="代表 石川 瞳" class="w-full h-auto object-cover rounded-lg">
@@ -309,32 +309,24 @@
     <p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p>
   </footer>
 
-  <!-- 厚生労働省RSS取得用スクリプト（自作プロキシ版） -->
+  <!-- 厚生労働省RSS取得用スクリプト（安定版API経由） -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // さきほど作成した functions/rss.js を呼び出します
-      fetch('/rss')
+      const rssUrl = 'https://www.mhlw.go.jp/stf/news.rdf';
+      // 非常に安定しているRSS専用の変換API（rss2json）を使用します
+      const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+
+      fetch(apiUrl)
         .then(response => {
           if (!response.ok) throw new Error('Network error');
-          return response.text();
+          return response.json();
         })
-        .then(xmlText => {
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-          const items = Array.from(xmlDoc.querySelectorAll("item"));
-
-          const getDateString = (item) => {
-            const dcDate = item.getElementsByTagNameNS("*", "date")[0];
-            if (dcDate) return dcDate.textContent;
-            const dateMatch = item.innerHTML.match(/<dc:date>(.*?)<\/dc:date>/);
-            if (dateMatch) return dateMatch[1];
-            return "";
-          };
-
+        .then(data => {
+          const items = data.items || [];
           const keywords = ['労働', '雇用', '助成金', '社会保険', '労災', '賃金', '働き方', '育児', '介護', '年金', '健保', 'ハローワーク', '最低賃金', '就業規則', 'キャリア', 'テレワーク', '女性活躍', '安全衛生', '派遣', 'フリーランス', '労働基準'];
 
           const filteredItems = items.filter(item => {
-            const title = item.querySelector("title") ? item.querySelector("title").textContent : "";
+            const title = item.title || "";
             return keywords.some(keyword => title.includes(keyword));
           });
 
@@ -344,13 +336,15 @@
             const displayItems = filteredItems.slice(0, 5);
             container.innerHTML = '';
             displayItems.forEach(item => {
-              const title = item.querySelector("title") ? item.querySelector("title").textContent : "タイトルなし";
-              const link = item.querySelector("link") ? item.querySelector("link").textContent : "#";
-              const dateStr = getDateString(item);
-
+              const title = item.title || "タイトルなし";
+              const link = item.link || "#";
+              const dateStr = item.pubDate || "";
+              
               let formattedDate = "日付不明";
               if (dateStr) {
-                const d = new Date(dateStr);
+                // "2026-08-24 10:00:00" のような形式から日付部分を取り出す
+                const datePart = dateStr.split(' ')[0];
+                const d = new Date(datePart.replace(/-/g, '/'));
                 if(!isNaN(d)) {
                   formattedDate = `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
                 }
