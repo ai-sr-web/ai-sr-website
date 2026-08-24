@@ -314,7 +314,7 @@
     document.addEventListener("DOMContentLoaded", function() {
       const rssUrl = 'https://www.mhlw.go.jp/stf/news.rdf';
       // 非常に安定しているRSS専用の変換API（rss2json）を使用します
-      const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl);
+      const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=30';
 
       fetch(apiUrl)
         .then(response => {
