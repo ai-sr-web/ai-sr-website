@@ -309,20 +309,18 @@
     <p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p>
   </footer>
 
-  <!-- 厚生労働省RSS取得用スクリプト -->
+  <!-- 厚生労働省RSS取得用スクリプト（自作プロキシ版） -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const rssUrl = 'https://www.mhlw.go.jp/stf/news.rdf';
-      const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
-
-      fetch(proxyUrl)
+      // さきほど作成した functions/rss.js を呼び出します
+      fetch('/rss')
         .then(response => {
           if (!response.ok) throw new Error('Network error');
-          return response.json();
+          return response.text();
         })
-        .then(data => {
+        .then(xmlText => {
           const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(data.contents, "text/xml");
+          const xmlDoc = parser.parseFromString(xmlText, "text/xml");
           const items = Array.from(xmlDoc.querySelectorAll("item"));
 
           const getDateString = (item) => {
@@ -396,7 +394,7 @@
           console.error('RSS Fetch Error:', error);
           document.getElementById('mhlw-topics').innerHTML = `
             <li class="py-6 text-center text-gray-600">
-              <p class="mb-3">サーバー混雑のため、最新情報の取得をスキップしました。</p>
+              <p class="mb-3">最新情報の取得に失敗しました。</p>
               <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-gray-600 font-bold hover:underline">
                 厚生労働省 雇用・労働トップページを確認する
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
