@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Fetch RSS and save as JSON
-        run: curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://www.mhlw.go.jp/stf/news.rdf&count=30" > news.json
+        run: curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://www.mhlw.go.jp/stf/news.rdf" > news.json
       - name: Commit and Push changes
         run: |
           git config user.name "GitHub Action"
