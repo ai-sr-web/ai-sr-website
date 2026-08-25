@@ -309,12 +309,11 @@
     <p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p>
   </footer>
 
-  <!-- 厚生労働省RSS取得用スクリプト（安定版API経由） -->
+  <!-- 厚生労働省ニュース取得用スクリプト（GitHub Actions生成データ読み込み） -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const rssUrl = 'https://www.mhlw.go.jp/stf/news.rdf';
-      // 非常に安定しているRSS専用の変換API（rss2json）を使用します
-      const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=30';
+      // GitHub Actionsで定期的（1日1回）に生成・保存されるファイルを読み込む
+      const apiUrl = 'news.json';
 
       fetch(apiUrl)
         .then(response => {
@@ -388,7 +387,7 @@
           console.error('RSS Fetch Error:', error);
           document.getElementById('mhlw-topics').innerHTML = `
             <li class="py-6 text-center text-gray-600">
-              <p class="mb-3">最新情報の取得に失敗しました。</p>
+              <p class="mb-3">現在、新しいトピックスを準備中です。</p>
               <a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-gray-600 font-bold hover:underline">
                 厚生労働省 雇用・労働トップページを確認する
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
