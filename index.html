@@ -341,10 +341,9 @@
               
               let formattedDate = "日付不明";
               if (dateStr) {
-                // "2026-08-24 10:00:00" のような形式から日付部分を取り出す
-                const datePart = dateStr.split(' ')[0];
-                const d = new Date(datePart.replace(/-/g, '/'));
-                if(!isNaN(d)) {
+                // "2026-08-25T14:00:00+09:00" のようなISO形式から日付部分（年月日）を安全に取得する
+                const d = new Date(dateStr);
+                if (!isNaN(d)) {
                   formattedDate = `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
                 }
               }
