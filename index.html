@@ -313,7 +313,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // GitHub Actionsで定期的（1日1回）に生成・保存されるファイルを読み込む
-      const apiUrl = 'news.json';
+      const apiUrl = 'https://mhlw-news-api.ai-sr-webadmin.workers.dev/';
 
       fetch(apiUrl)
         .then(response => {
