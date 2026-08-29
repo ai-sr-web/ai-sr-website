@@ -276,25 +276,32 @@
       <div class="bg-white text-gray-800 rounded-2xl p-8 shadow-lg max-w-2xl mx-auto border border-brand-100 text-left relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-2 bg-brand-500"></div>
 
-        <form action="https://formspree.io/f/xljrvkya" method="POST" class="space-y-6 mt-2">
+        <!-- 自前API（GAS）送信用のフォームへ変更 -->
+        <form id="contact-form" class="space-y-6 mt-2">
           <div>
             <label for="name" class="block text-sm font-bold text-gray-700 mb-1">貴社名・お名前 <span class="text-gray-500 text-xs ml-1 font-normal">(必須)</span></label>
-            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white">
+            <input type="text" id="name" name="name" required placeholder="例：山田 太郎" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white">
           </div>
           <div>
             <label for="email" class="block text-sm font-bold text-gray-700 mb-1">メールアドレス <span class="text-gray-500 text-xs ml-1 font-normal">(必須)</span></label>
-            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white">
+            <input type="email" id="email" name="email" required placeholder="例：info@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white">
           </div>
           <div>
             <label for="message" class="block text-sm font-bold text-gray-700 mb-1">お問い合わせ内容 <span class="text-gray-500 text-xs ml-1 font-normal">(必須)</span></label>
-            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white"></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="ご相談内容をご記入ください" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition bg-gray-50 hover:bg-white focus:bg-white"></textarea>
           </div>
           <div class="text-center pt-4">
-            <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-12 rounded-full shadow-md transition transform hover:-translate-y-1">
+            <button type="submit" id="submit-button" class="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-12 rounded-full shadow-md transition transform hover:-translate-y-1 w-full sm:w-auto">
               送信する
             </button>
           </div>
         </form>
+
+        <!-- 送信完了メッセージ（初期状態は非表示） -->
+        <div id="success-message" style="display: none;" class="bg-brand-50 border-l-4 border-brand-500 p-6 mt-6 rounded-r-lg text-center">
+          <h4 class="text-xl font-bold text-gray-800 mb-2">送信が完了いたしました</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">お問い合わせいただき誠にありがとうございます。<br>確認次第、担当者よりご連絡させていただきます。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -309,10 +316,10 @@
     <p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p>
   </footer>
 
-  <!-- 厚生労働省ニュース取得用スクリプト（GitHub Actions生成データ読み込み） -->
+  <!-- 厚生労働省ニュース取得用スクリプト -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // GitHub Actionsで定期的（1日1回）に生成・保存されるファイルを読み込む
+      // Cloudflare Workerから最新の厚労省ニュースを直接取得する
       const apiUrl = 'https://mhlw-news-api.ai-sr-webadmin.workers.dev/';
 
       fetch(apiUrl)
@@ -341,7 +348,6 @@
               
               let formattedDate = "日付不明";
               if (dateStr) {
-                // "2026-08-25T14:00:00+09:00" のようなISO形式から日付部分（年月日）を安全に取得する
                 const d = new Date(dateStr);
                 if (!isNaN(d)) {
                   formattedDate = `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
@@ -394,6 +400,45 @@
             </li>
           `;
         });
+    });
+  </script>
+
+  <!-- GASお問い合わせフォーム制作用スクリプト -->
+  <script>
+    const gasUrl = "https://script.google.com/macros/s/AKfycby_u4J74zAf99d3tUXq3xsyv_CiLU4Buhr8t3-AAcXZ6e3U5qN8OY0v5kMev746e-C5nQ/exec";
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      
+      const form = this;
+      const submitButton = document.getElementById('submit-button');
+      const successMessage = document.getElementById('success-message');
+      
+      // 送信ボタンを「送信中...」にして連打を防止
+      const originalButtonText = submitButton.textContent;
+      submitButton.textContent = '送信中...';
+      submitButton.disabled = true;
+      submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+
+      const formData = new FormData(form);
+
+      // GASへデータを送信
+      fetch(gasUrl, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        // 送信成功時：フォームを隠して完了メッセージを表示
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+      })
+      .catch(error => {
+        // エラー時
+        alert('通信エラーが発生しました。時間をおいて再度お試しください。');
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+        submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+      });
     });
   </script>
 
