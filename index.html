@@ -166,16 +166,18 @@
           <p class="text-gray-600">日々の労務管理に関する疑問や、労働環境の整備、トラブル防止に向けたご相談など、経営者様の立場に寄り添い丁寧にお答えします。</p>
         </div>
 
-        <!-- 2. セミナー、研修の講師 -->
-        <div class="bg-white border border-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition">
+        <!-- 2. セミナー、研修の講師（リンク追加） -->
+        <div class="bg-white border border-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition flex flex-col">
           <h4 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-brand-200 pb-2">セミナー・研修の講師</h4>
-          <p class="text-gray-600">法改正をはじめ、「D&I」や「ビジネスと人権」の視点を取り入れたコミュニケーションスキルアップ等、企業向け各種セミナーや社内研修の講師を務めます。</p>
+          <p class="text-gray-600 flex-grow mb-4">法改正をはじめ、「D&I」や「ビジネスと人権」の視点を取り入れたコミュニケーションスキルアップ等、企業向け各種セミナーや社内研修の講師を務めます。</p>
+          <a href="di.html" class="text-brand-600 font-bold hover:underline text-right mt-auto">詳細を見る ＞</a>
         </div>
 
-        <!-- 3. 業務自動化・効率化（DX） -->
-        <div class="bg-white border border-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition">
+        <!-- 3. 業務自動化・効率化（DX）（リンク追加） -->
+        <div class="bg-white border border-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition flex flex-col">
           <h4 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-brand-200 pb-2">業務自動化・効率化（DX）</h4>
-          <p class="text-gray-600">ExcelやVBAを活用し、複雑な賃金計算や勤怠集計など、市販システムでは対応しきれない社内業務の自動化をご支援します。</p>
+          <p class="text-gray-600 flex-grow mb-4">ExcelやVBAを活用し、複雑な賃金計算や勤怠集計など、市販システムでは対応しきれない社内業務の自動化をご支援します。</p>
+          <a href="dx.html" class="text-brand-600 font-bold hover:underline text-right mt-auto">詳細を見る ＞</a>
         </div>
 
         <!-- 4. 助成金 -->
@@ -420,20 +422,38 @@
       submitButton.disabled = true;
       submitButton.classList.add('opacity-50', 'cursor-not-allowed');
 
+      // 送信データをURLエンコード形式に変換（GASと最も相性が良い形式）
       const formData = new FormData(form);
+      const params = new URLSearchParams();
+      for (const pair of formData.entries()) {
+        params.append(pair[0], pair[1]);
+      }
 
       // GASへデータを送信
       fetch(gasUrl, {
         method: 'POST',
-        body: formData
+        body: params,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }
       })
       .then(response => {
-        // 送信成功時：フォームを隠して完了メッセージを表示
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(data => {
+        if (data.status === "success") {
+          // 完全に成功した場合のみ完了メッセージを表示
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+        } else {
+          // GAS側で何らかのエラーが起きた場合
+          throw new Error(data.message || "GAS Error");
+        }
       })
       .catch(error => {
         // エラー時
+        console.error("Error:", error);
         alert('通信エラーが発生しました。時間をおいて再度お試しください。');
         submitButton.textContent = originalButtonText;
         submitButton.disabled = false;
