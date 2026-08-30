@@ -9,6 +9,7 @@
   <script>tailwind.config = { theme: { extend: { colors: { brand: { 50: '#fff5f5', 100: '#ffe3e3', 200: '#ffc9c9', 500: '#F08080', 600: '#e06666', 900: '#8b2e2e' } } } } }</script>
 </head>
 <body class="bg-brand-50 text-gray-800 font-sans antialiased">
+<!-- ヘッダー (下層ページ用) -->
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-1.5 hover:opacity-80 transition group">
@@ -19,7 +20,28 @@
         </div>
       </a>
       <nav class="hidden md:flex space-x-6 items-center">
-        <a href="index.html" class="text-gray-600 hover:text-gray-900 transition font-medium">トップページへ戻る</a>
+        <a href="index.html#about" class="text-gray-600 hover:text-gray-900 transition font-medium">事務所案内</a>
+        <a href="index.html#greeting" class="text-gray-600 hover:text-gray-900 transition font-medium">代表挨拶</a>
+        
+        <!-- サービス（ドロップダウンメニュー） -->
+        <div class="relative group">
+          <a href="index.html#services" class="text-gray-600 hover:text-gray-900 transition font-medium flex items-center gap-1 py-2">
+            サービス
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <!-- ドロップダウンの中身（ホバー時に表示） -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-0 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <div class="py-2">
+              <a href="roumu.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">労務相談</a>
+              <a href="di.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">セミナー・研修の講師</a>
+              <a href="dx.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">業務自動化・効率化（DX）</a>
+              <a href="joseikin.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">助成金申請</a>
+              <a href="tetsuzuki.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">各種手続き</a>
+              <a href="kisoku.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">就業規則の作成</a>
+            </div>
+          </div>
+        </div>
+
         <a href="index.html#contact" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2 rounded-full shadow-sm transition font-bold">お問い合わせ</a>
       </nav>
     </div>
