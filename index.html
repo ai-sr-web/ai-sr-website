@@ -60,7 +60,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Meiryo"', '"メイリオ"', '"Hiragino Sans"', '"ヒラギノ角ゴ Pro W3"', 'sans-serif'],
+            sans: ['"Helvetica Neue"', 'Arial', '"Hiragino Sans"', '"Meiryo"', 'sans-serif'],
           },
           colors: {
             brand: {
@@ -199,7 +199,7 @@
         <!-- 4. 助成金 -->
         <div class="bg-white border border-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition flex flex-col">
           <h4 class="text-xl font-bold text-gray-800 mb-2 border-b-2 border-brand-200 pb-2">助成金申請</h4>
-          <p class="text-gray-600 flex-grow mb-4">各事業所の状況や取り組み에合った助成金のご提案から、煩雑な申請手続きの代行まで確実に行います。</p>
+          <p class="text-gray-600 flex-grow mb-4">各事業所の状況や取り組みに合った助成金のご提案から、煩雑な申請手続きの代行まで確実に行います。</p>
           <a href="joseikin.html" class="text-brand-600 font-bold hover:underline text-right mt-auto">詳細を見る ＞</a>
         </div>
 
@@ -255,7 +255,7 @@
         <div class="bg-brand-50 p-6 rounded-lg border border-brand-100">
           <h5 class="font-bold text-gray-800 mb-3 border-b border-brand-200 pb-2">略歴・保有資格</h5>
           <ul class="text-sm text-gray-700 space-y-2">
-            <li class="flex"><span class="w-24 shrink-0 font-medium">保有資格：</span>特定社会保険労務士、ＡＦＰ</li>
+            <li class="flex"><span class="w-24 shrink-0 font-medium">保有資格：</span>特定社会保険労務士、ＡＦＰ、年金アドバイザー3級</li>
             <li class="flex"><span class="w-24 shrink-0 font-medium">経歴：</span>大手専門事務所にて5年間勤務。その後、Ａｉ社会保険労務士事務所を開業。米国での生活や勤務経験を活かし、D&I推進や「ビジネスと人権」分野の研修・コンサルティングも手掛ける。</li>
             <li class="flex"><span class="w-24 shrink-0 font-medium">所属：</span>兵庫県社会保険労務士会西宮支部（幹事）</li>
           </ul>
@@ -341,7 +341,6 @@
   <!-- 厚生労働省ニュース取得用スクリプト -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Cloudflare Workerから最新の厚労省ニュースを取得する
       const apiUrl = 'https://mhlw-news-api.ai-sr-webadmin.workers.dev/';
 
       fetch(apiUrl)
@@ -409,7 +408,6 @@
             `;
           }
 
-          // 読み込み完了後にアンカー位置へスクロールを再調整する処理
           if (window.location.hash) {
             setTimeout(() => {
               const targetElement = document.querySelector(window.location.hash);
@@ -434,7 +432,6 @@
     });
   </script>
 
-  <!-- GASお問い合わせフォーム制作用スクリプト -->
   <script>
     const gasUrl = "https://script.google.com/macros/s/AKfycby_u4J74zAf99d3tUXq3xsyv_CiLU4Buhr8t3-AAcXZ6e3U5qN8OY0v5kMev746e-C5nQ/exec";
 
@@ -445,20 +442,17 @@
       const submitButton = document.getElementById('submit-button');
       const successMessage = document.getElementById('success-message');
       
-      // 送信ボタンを「送信中...」にして連打を防止
       const originalButtonText = submitButton.textContent;
       submitButton.textContent = '送信中...';
       submitButton.disabled = true;
       submitButton.classList.add('opacity-50', 'cursor-not-allowed');
 
-      // 送信データをURLエンコード形式に変換（GASと最も相性が良い形式）
       const formData = new FormData(form);
       const params = new URLSearchParams();
       for (const pair of formData.entries()) {
         params.append(pair[0], pair[1]);
       }
 
-      // GASへデータを送信
       fetch(gasUrl, {
         method: 'POST',
         body: params,
@@ -472,16 +466,13 @@
       })
       .then(data => {
         if (data.status === "success") {
-          // 完全に成功した場合のみ完了メッセージを表示
           form.style.display = 'none';
           successMessage.style.display = 'block';
         } else {
-          // GAS側で何らかのエラーが起きた場合
           throw new Error(data.message || "GAS Error");
         }
       })
       .catch(error => {
-        // エラー時
         console.error("Error:", error);
         alert('通信エラーが発生しました。時間をおいて再度お試しください。');
         submitButton.textContent = originalButtonText;

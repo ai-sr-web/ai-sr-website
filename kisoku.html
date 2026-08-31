@@ -6,10 +6,26 @@
   <title>就業規則の作成・見直し | Ａｉ社会保険労務士事務所</title>
   <link rel="icon" type="image/png" href="image_95e6cb.png">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { colors: { brand: { 50: '#fff5f5', 100: '#ffe3e3', 200: '#ffc9c9', 500: '#F08080', 600: '#e06666', 900: '#8b2e2e' } } } } }</script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Helvetica Neue"', 'Arial', '"Hiragino Sans"', '"Meiryo"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff5f5', 100: '#ffe3e3', 200: '#ffc9c9', 300: '#ffa8a8',
+              400: '#ff8787', 500: '#F08080', 600: '#e06666', 700: '#c94f4f',
+              800: '#a63c3c', 900: '#8b2e2e',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="bg-brand-50 text-gray-800 font-sans antialiased">
-<!-- ヘッダー (下層ページ用) -->
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
       <a href="index.html" class="flex items-center gap-1.5 hover:opacity-80 transition group">
