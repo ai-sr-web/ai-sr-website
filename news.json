@@ -1,6 +1,136 @@
 {
   "items": [
     {
+      "title": "第214回社会保障審議会医療保険部会（ペーパーレス）の開催について",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75881.html",
+      "pubDate": "2026-09-01T14:00:00+09:00"
+    },
+    {
+      "title": "令和８年度 第１回戦没者の遺骨収集に関する有識者会議の開催について",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75868.html",
+      "pubDate": "2026-09-01T14:00:00+09:00"
+    },
+    {
+      "title": "令和７年度第１回安全技術調査会資料",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75615.html",
+      "pubDate": "2026-09-01T14:00:00+09:00"
+    },
+    {
+      "title": "第78回補装具評価検討会　開催案内",
+      "link": "https://www.mhlw.go.jp/stf/74hosougu_00004.html",
+      "pubDate": "2026-09-01T14:00:00+09:00"
+    },
+    {
+      "title": "第91回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75855.html",
+      "pubDate": "2026-09-01T11:00:00+09:00"
+    },
+    {
+      "title": "労働政策審議会 (雇用環境・均等分科会）",
+      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
+      "pubDate": "2026-09-01T11:00:00+09:00"
+    },
+    {
+      "title": "第50回救急救命士国家試験の施行について",
+      "link": "http://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/index.html",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度診療放射線技師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinryouhoushasengishi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度臨床検査技師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukensagishi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度理学療法士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rigakuryouhoushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度作業療法士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/sagyouryouhoushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度視能訓練士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinoukunrenshi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度臨床工学技士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukougakugishi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度義肢装具士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/gishisougushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度歯科衛生士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shikaeiseishi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度歯科技工士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shikagikoushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度あん摩マッサージ指圧師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/anma/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度はり師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/harishi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度きゅう師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kyushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度柔道整復師国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/judouseihukushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度言語聴覚士国家試験の施行",
+      "link": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/gengochoukakushi/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "WEBマガジン「厚生労働」（特集[戦没者慰霊]ほか更新）",
+      "link": "https://www.mhlw.go.jp/web_magazine/",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "第78回「保健文化賞」受賞者が決まりました",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75807.html",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "世界メンタルヘルスデー JAPAN 2026 特設サイト",
+      "link": "https://www.mhlw.go.jp/kokoro/mental_health_day/index.html",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "令和８年度医薬品等審査迅速化事業費補助金（リアルワールドデータ活用促進事業）公募要領",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75749.html",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
+      "title": "９月10日から９月16日は「自殺予防週間」です",
+      "link": "https://www.mhlw.go.jp/stf/r8_jisatsuyoboushukan.html",
+      "pubDate": "2026-09-01T10:00:00+09:00"
+    },
+    {
       "title": "リビア国保健省との協力覚書に署名しました",
       "link": "https://www.mhlw.go.jp/stf/newpage_75921.html",
       "pubDate": "2026-08-31T18:54:00+09:00"
@@ -296,6 +426,11 @@
       "pubDate": "2026-08-26T10:00:00+09:00"
     },
     {
+      "title": "令和８年度第１回医道審議会医師分科会医師専門研修部会",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75784.html",
+      "pubDate": "2026-08-25T15:37:00+09:00"
+    },
+    {
       "title": "第２１回アレルギー疾患対策推進協議会　資料",
       "link": "https://www.mhlw.go.jp/stf/newpage_75783.html",
       "pubDate": "2026-08-25T15:36:00+09:00"
@@ -313,11 +448,6 @@
     {
       "title": "第104回「電離放射線障害の業務上外に関する検討会」を開催します",
       "link": "https://www.mhlw.go.jp/stf/newpage_75525.html",
-      "pubDate": "2026-08-25T14:00:00+09:00"
-    },
-    {
-      "title": "労働政策審議会 (雇用環境・均等分科会）",
-      "link": "https://www.mhlw.go.jp/stf/shingi/shingi-rousei_126989.html",
       "pubDate": "2026-08-25T14:00:00+09:00"
     },
     {
@@ -359,6 +489,11 @@
       "title": "第397回労働政策審議会職業安定分科会労働力需給制度部会（開催案内）",
       "link": "https://www.mhlw.go.jp/stf/newpage_75307.html",
       "pubDate": "2026-08-24T14:00:00+09:00"
+    },
+    {
+      "title": "2025年　海外情勢報告",
+      "link": "https://www.mhlw.go.jp/stf/toukei_hakusho/kaigai25.html",
+      "pubDate": "2026-08-24T13:30:00+09:00"
     },
     {
       "title": "第４７回がん検診のあり方に関する検討会（議事録）",
@@ -506,6 +641,11 @@
       "pubDate": "2026-08-19T11:00:00+09:00"
     },
     {
+      "title": "令和８年度中学生を対象とした献血への理解を促すポスターのキャッチフレーズを募集します！",
+      "link": "https://www.mhlw.go.jp/stf/newpage_75621.html",
+      "pubDate": "2026-08-19T10:44:00+09:00"
+    },
+    {
       "title": "危険ドラッグの成分４物質を新たに指定薬物に指定",
       "link": "https://www.mhlw.go.jp/stf/houdou/0000212707_00056.html",
       "pubDate": "2026-08-18T14:00:00+09:00"
@@ -524,31 +664,6 @@
       "title": "第32回過労死等防止対策推進協議会　議事録",
       "link": "https://www.mhlw.go.jp/stf/newpage_75595.html",
       "pubDate": "2026-08-18T10:29:00+09:00"
-    },
-    {
-      "title": "建設業・運輸業の働き方改革に向けた新PR動画を公開",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74962.html",
-      "pubDate": "2026-08-17T19:23:00+09:00"
-    },
-    {
-      "title": "第188回労働政策審議会安全衛生分科会（開催案内）",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75520.html",
-      "pubDate": "2026-08-17T14:00:00+09:00"
-    },
-    {
-      "title": "薬事審議会　医薬品第二部会を開催します",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75462.html",
-      "pubDate": "2026-08-17T14:00:00+09:00"
-    },
-    {
-      "title": "「第303回原子爆弾被爆者医療分科会」の開催について",
-      "link": "https://www.mhlw.go.jp/stf/newpage_74972.html",
-      "pubDate": "2026-08-17T14:00:00+09:00"
-    },
-    {
-      "title": "2026年７月３日　第７回労働政策審議会労働条件分科会「組織再編に伴う労働関係の調整に関する部会」　議事録",
-      "link": "https://www.mhlw.go.jp/stf/newpage_75551.html",
-      "pubDate": "2026-08-17T09:23:00+09:00"
     }
   ]
 }
