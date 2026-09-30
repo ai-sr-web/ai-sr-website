@@ -114,6 +114,14 @@
       .reveal-anim > * { animation: none !important; }
       html { scroll-behavior: auto !important; }
     }
+    /* スマホ表示の文字サイズを読みやすく調整 */
+    @media (max-width: 767px) {
+      body { font-size: 1.0625rem; }
+      .text-xs   { font-size: .875rem  !important; line-height: 1.55 !important; }
+      .text-sm   { font-size: 1rem     !important; line-height: 1.8  !important; }
+      .text-base { font-size: 1.0625rem !important; line-height: 1.85 !important; }
+      .text-lg   { font-size: 1.25rem  !important; line-height: 1.6  !important; }
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased">
@@ -132,6 +140,7 @@
         <nav class="hidden md:flex items-center gap-7">
           <a href="#about" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">事務所案内</a>
           <a href="#greeting" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">代表挨拶</a>
+          <a href="media.html" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">メディア掲載</a>
 
           <div class="relative group">
             <button type="button" class="flex items-center gap-1 text-ink-soft hover:text-brand-700 transition font-medium text-sm py-2" aria-haspopup="true">
@@ -164,6 +173,7 @@
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col">
         <a href="#about" class="py-3 text-ink font-medium border-b border-brand-50">事務所案内</a>
         <a href="#greeting" class="py-3 text-ink font-medium border-b border-brand-50">代表挨拶</a>
+        <a href="media.html" class="py-3 text-ink font-medium border-b border-brand-50">メディア掲載</a>
         <span class="pt-4 pb-1 text-xs font-bold text-ink-soft">サービス</span>
         <a href="roumu.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">労務相談</a>
         <a href="di.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">セミナー・研修の講師</a>
@@ -194,6 +204,19 @@
       </div>
     </div>
   </section>
+
+  <!-- メディア出演バナー -->
+  <a href="media.html" class="block bg-brand-700 hover:bg-brand-800 text-white transition">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+      <span class="inline-flex items-center gap-2 font-bold">
+        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125z"/></svg>
+        関西テレビ「newsランナー」の取材を受けました
+      </span>
+      <span class="inline-flex items-center gap-1 text-sm font-bold underline underline-offset-4 decoration-white/60">カスハラ対策特集の動画を見る
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </span>
+    </div>
+  </a>
 
   <!-- 4つの強み -->
   <section id="about" class="py-20 md:py-24 bg-white">
@@ -271,57 +294,75 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <a href="roumu.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">労務相談</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">日々の労務管理に関する疑問や、労働環境の整備、トラブル防止に向けたご相談など、経営者様の立場に寄り添い丁寧にお答えします。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="roumu.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">01</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">労務相談</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">日々の労務管理に関する疑問や、労働環境の整備、トラブル防止に向けたご相談など、経営者様の立場に寄り添い丁寧にお答えします。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
-        <a href="di.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">セミナー・研修の講師</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">法改正をはじめ、「D&amp;I」や「ビジネスと人権」の視点を取り入れたコミュニケーションスキルアップ等、企業向け各種セミナーや研修の講師を務めます。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="di.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">02</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">セミナー・研修の講師</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">法改正をはじめ、「D&amp;I」や「ビジネスと人権」の視点を取り入れたコミュニケーションスキルアップ等、企業向け各種セミナーや研修の講師を務めます。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
-        <a href="dx.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">DXコンサルティング</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">ExcelやVBAを活用した業務自動化のご提案。まずは無料ヒアリングで現状を丁寧に把握し、対象範囲や進め方をすり合わせたうえで開発に着手します。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="dx.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">03</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">DXコンサルティング</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">ExcelやVBAを活用した業務自動化のご提案。まずは無料ヒアリングで現状を丁寧に把握し、対象範囲や進め方をすり合わせたうえで開発に着手します。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
-        <a href="joseikin.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">助成金申請</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">各事業所の状況や取り組みに合った助成金のご提案から、煩雑な申請手続きの代行まで確実に行います。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="joseikin.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">04</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">助成金申請</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">各事業所の状況や取り組みに合った助成金のご提案から、煩雑な申請手続きの代行まで確実に行います。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
-        <a href="tetsuzuki.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">各種手続き</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">労働社会保険諸法令に基づく各種行政手続きや、報告書の作成・届出など、総務・労務に関する実務をスムーズに代行・サポートします。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="tetsuzuki.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">05</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">各種手続き</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">労働社会保険諸法令に基づく各種行政手続きや、報告書の作成・届出など、総務・労務に関する実務をスムーズに代行・サポートします。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
-        <a href="kisoku.html" class="group bg-white border border-brand-100 hover:border-brand-400 rounded-2xl p-7 transition flex flex-col">
-          <div class="w-2 h-2 rounded-full bg-brand-500 mb-5"></div>
-          <h4 class="text-lg font-bold text-ink mb-3">就業規則の作成</h4>
-          <p class="text-ink-soft text-sm flex-grow mb-6 leading-relaxed">法改正に確実に対応し、各事業所の実態に合わせた就業規則の作成・見直しを行います。労使トラブルを未然に防ぎます。</p>
-          <span class="text-brand-700 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">詳細を見る
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        <a href="kisoku.html" class="group relative bg-white border border-brand-200 border-t-4 border-t-brand-500 rounded-2xl p-7 shadow-warm hover:shadow-xl hover:-translate-y-1 hover:border-brand-400 transition duration-300 flex flex-col">
+          <span class="absolute top-5 right-6 text-3xl font-bold text-brand-100 select-none" aria-hidden="true">06</span>
+          <div class="w-14 h-14 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-ink mb-3">就業規則の作成</h4>
+          <p class="text-ink-soft text-base md:text-[15px] flex-grow mb-6 leading-relaxed">法改正に確実に対応し、各事業所の実態に合わせた就業規則の作成・見直しを行います。労使トラブルを未然に防ぎます。</p>
+          <span class="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-full bg-brand-50 border border-brand-200 text-brand-700 font-bold text-sm py-3 group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition">詳細を見る
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
           </span>
         </a>
 
@@ -366,7 +407,7 @@
             <ul class="text-sm text-ink-soft space-y-2">
               <li class="flex"><span class="w-24 shrink-0 font-bold text-ink">保有資格：</span>特定社会保険労務士、ＡＦＰ、年金アドバイザー3級</li>
               <li class="flex"><span class="w-24 shrink-0 font-bold text-ink">経歴：</span>大手専門事務所にて5年間勤務。その後、Ａｉ社会保険労務士事務所を開業。米国での生活や勤務経験を活かし、D&amp;I推進や「ビジネスと人権」分野の研修・コンサルティングも手掛ける。自身も家族の介護を経験しており、仕事と育児・介護の両立支援にも力を入れている。</li>
-              <li class="flex"><span class="w-24 shrink-0 font-bold text-ink">所属：</span>兵庫県社会保険労務士会西宮支部（幹事）</li>
+              <li class="flex"><span class="w-24 shrink-0 font-bold text-ink">所属：</span>兵庫県社会保険労務士会　西宮支部（幹事）</li>
             </ul>
           </div>
         </div>
@@ -448,6 +489,7 @@
         <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2">
           <a href="#about" class="hover:text-white transition">事務所案内</a>
           <a href="#greeting" class="hover:text-white transition">代表挨拶</a>
+          <a href="media.html" class="hover:text-white transition">メディア掲載</a>
           <a href="#services" class="hover:text-white transition">サービス</a>
           <a href="#contact" class="hover:text-white transition">お問い合わせ</a>
         </nav>

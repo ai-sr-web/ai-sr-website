@@ -91,6 +91,14 @@
       .reveal-anim > * { animation: none !important; }
       html { scroll-behavior: auto !important; }
     }
+    /* スマホ表示の文字サイズを読みやすく調整 */
+    @media (max-width: 767px) {
+      body { font-size: 1.0625rem; }
+      .text-xs   { font-size: .875rem  !important; line-height: 1.55 !important; }
+      .text-sm   { font-size: 1rem     !important; line-height: 1.8  !important; }
+      .text-base { font-size: 1.0625rem !important; line-height: 1.85 !important; }
+      .text-lg   { font-size: 1.25rem  !important; line-height: 1.6  !important; }
+    }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased">
@@ -109,6 +117,7 @@
         <nav class="hidden md:flex items-center gap-7">
           <a href="index.html#about" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">事務所案内</a>
           <a href="index.html#greeting" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">代表挨拶</a>
+          <a href="media.html" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">メディア掲載</a>
 
           <div class="relative group">
             <button type="button" class="flex items-center gap-1 text-ink-soft hover:text-brand-700 transition font-medium text-sm py-2" aria-haspopup="true">
@@ -141,6 +150,7 @@
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col">
         <a href="index.html#about" class="py-3 text-ink font-medium border-b border-brand-50">事務所案内</a>
         <a href="index.html#greeting" class="py-3 text-ink font-medium border-b border-brand-50">代表挨拶</a>
+        <a href="media.html" class="py-3 text-ink font-medium border-b border-brand-50">メディア掲載</a>
         <span class="pt-4 pb-1 text-xs font-bold text-ink-soft">サービス</span>
         <a href="roumu.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">労務相談</a>
         <a href="di.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">セミナー・研修の講師</a>
@@ -209,6 +219,7 @@
         <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2">
           <a href="index.html#about" class="hover:text-white transition">事務所案内</a>
           <a href="index.html#greeting" class="hover:text-white transition">代表挨拶</a>
+          <a href="media.html" class="hover:text-white transition">メディア掲載</a>
           <a href="index.html#services" class="hover:text-white transition">サービス</a>
           <a href="index.html#contact" class="hover:text-white transition">お問い合わせ</a>
         </nav>
