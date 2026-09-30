@@ -4,7 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>助成金申請・提案 | Ａｉ社会保険労務士事務所</title>
+  <meta name="description" content="兵庫県西宮市のＡｉ社会保険労務士事務所による助成金申請サポート。無料診断から就業規則の整備、支給申請の代行まで一貫してご支援します。">
+  <meta name="keywords" content="西宮市,社会保険労務士,社労士,特定社会保険労務士,人事労務,両立支援,介護,育児,石川瞳,助成金申請,両立支援等助成金">
+  <link rel="canonical" href="https://ai-sr-website.ai-sr-webadmin.workers.dev/joseikin.html">
   <link rel="icon" type="image/png" href="image_95e6cb.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="Ａｉ社会保険労務士事務所">
+  <meta property="og:title" content="助成金申請・提案 | Ａｉ社会保険労務士事務所">
+  <meta property="og:description" content="兵庫県西宮市のＡｉ社会保険労務士事務所による助成金申請サポート。無料診断から就業規則の整備、支給申請の代行まで一貫してご支援します。">
+  <meta property="og:url" content="https://ai-sr-website.ai-sr-webadmin.workers.dev/joseikin.html">
+  <meta property="og:image" content="https://ai-sr-website.ai-sr-webadmin.workers.dev/image_95e6cb.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="助成金申請・提案 | Ａｉ社会保険労務士事務所">
+  <meta name="twitter:description" content="兵庫県西宮市のＡｉ社会保険労務士事務所による助成金申請サポート。無料診断から就業規則の整備、支給申請の代行まで一貫してご支援します。">
+  <meta name="twitter:image" content="https://ai-sr-website.ai-sr-webadmin.workers.dev/image_95e6cb.png">
+
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -14,81 +31,219 @@
             sans: ['"Helvetica Neue"', 'Arial', '"Hiragino Sans"', '"Meiryo"', 'sans-serif'],
           },
           colors: {
+            paper: '#FDF9F4',
+            ink: {
+              DEFAULT: '#2A211D',
+              soft: '#6B5D54',
+            },
             brand: {
-              50: '#fff5f5', 100: '#ffe3e3', 200: '#ffc9c9', 300: '#ffa8a8',
-              400: '#ff8787', 500: '#F08080', 600: '#e06666', 700: '#c94f4f',
-              800: '#a63c3c', 900: '#8b2e2e',
-            }
-          }
+              50:  '#FFF6F3',
+              100: '#FDE8E1',
+              200: '#FAD0C3',
+              300: '#F5AC96',
+              400: '#EE8672',
+              500: '#D6614C',
+              600: '#C2503E',
+              700: '#A8402F',
+              800: '#7E2F22',
+              900: '#551F17',
+            },
+          },
+          boxShadow: {
+            warm: '0 10px 30px -12px rgba(85, 31, 23, 0.25)',
+          },
         }
       }
     }
   </script>
+  <style>
+    @keyframes revealUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal-anim > * {
+      animation: revealUp .8s cubic-bezier(.22,1,.36,1) both;
+    }
+    .reveal-anim > *:nth-child(1) { animation-delay: .05s; }
+    .reveal-anim > *:nth-child(2) { animation-delay: .18s; }
+    .reveal-anim > *:nth-child(3) { animation-delay: .31s; }
+    .reveal-anim > *:nth-child(4) { animation-delay: .44s; }
+    .reveal-anim > *:nth-child(5) { animation-delay: .57s; }
+
+    .mobile-menu-panel {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .35s ease, opacity .25s ease;
+    }
+    .mobile-menu-panel.open {
+      max-height: 640px;
+      opacity: 1;
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid #A8402F;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-anim > * { animation: none !important; }
+      html { scroll-behavior: auto !important; }
+    }
+  </style>
 </head>
-<body class="bg-brand-50 text-gray-800 font-sans antialiased">
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-1.5 hover:opacity-80 transition group">
-        <img src="image_95e6cb.png" alt="ロゴ" class="h-14 w-auto object-contain">
-        <div class="flex flex-col justify-center">
-          <span class="text-[0.65rem] md:text-xs font-bold text-gray-500 tracking-wider mb-[1px]">人事・労務コンサルティング</span>
-          <span class="text-xl md:text-2xl font-bold text-gray-800 tracking-tight leading-none group-hover:text-gray-600 transition-colors">Ａｉ社会保険労務士事務所</span>
-        </div>
-      </a>
-      <nav class="hidden md:flex space-x-6 items-center">
-        <a href="index.html#about" class="text-gray-600 hover:text-gray-900 transition font-medium">事務所案内</a>
-        <a href="index.html#greeting" class="text-gray-600 hover:text-gray-900 transition font-medium">代表挨拶</a>
-        
-        <!-- サービス（ドロップダウンメニュー） -->
-        <div class="relative group">
-          <a href="index.html#services" class="text-gray-600 hover:text-gray-900 transition font-medium flex items-center gap-1 py-2">
-            サービス
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </a>
-          <!-- ドロップダウンの中身（ホバー時に表示） -->
-          <div class="absolute left-1/2 -translate-x-1/2 mt-0 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-            <div class="py-2">
-              <a href="roumu.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">労務相談</a>
-              <a href="di.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">セミナー・研修の講師</a>
-              <a href="dx.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">業務自動化・効率化（DX）</a>
-              <a href="joseikin.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">助成金申請</a>
-              <a href="tetsuzuki.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">各種手続き</a>
-              <a href="kisoku.html" class="block px-4 py-2.5 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">就業規則の作成</a>
+<body class="bg-paper text-ink font-sans antialiased">
+
+  <header class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-brand-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+          <img src="image_95e6cb.png" alt="Ａｉ社会保険労務士事務所 ロゴ" class="h-11 w-auto object-contain">
+          <span class="flex flex-col justify-center leading-none">
+            <span class="text-[0.65rem] md:text-xs font-bold text-ink-soft tracking-wide mb-1">人事・労務コンサルティング</span>
+            <span class="text-lg md:text-xl font-bold text-ink group-hover:text-brand-700 transition-colors">Ａｉ社会保険労務士事務所</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="index.html#about" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">事務所案内</a>
+          <a href="index.html#greeting" class="text-ink-soft hover:text-brand-700 transition font-medium text-sm">代表挨拶</a>
+
+          <div class="relative group">
+            <button type="button" class="flex items-center gap-1 text-ink-soft hover:text-brand-700 transition font-medium text-sm py-2" aria-haspopup="true">
+              サービス
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-64 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+              <div class="bg-white border border-brand-100 rounded-xl shadow-warm py-2 overflow-hidden">
+                <a href="roumu.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">労務相談</a>
+                <a href="di.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">セミナー・研修の講師</a>
+                <a href="dx.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">DXコンサルティング</a>
+                <a href="joseikin.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">助成金申請</a>
+                <a href="tetsuzuki.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">各種手続き</a>
+                <a href="kisoku.html" class="block px-5 py-3 text-sm text-ink hover:bg-brand-50 hover:text-brand-700 transition-colors">就業規則の作成</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <a href="index.html#contact" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2 rounded-full shadow-sm transition font-bold">お問い合わせ</a>
+          <a href="index.html#contact" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full shadow-sm transition font-bold text-sm">お問い合わせ</a>
+        </nav>
+
+        <button id="menu-toggle" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-ink hover:bg-brand-50 transition" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+          <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu-panel md:hidden border-t border-brand-100 bg-white">
+      <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col">
+        <a href="index.html#about" class="py-3 text-ink font-medium border-b border-brand-50">事務所案内</a>
+        <a href="index.html#greeting" class="py-3 text-ink font-medium border-b border-brand-50">代表挨拶</a>
+        <span class="pt-4 pb-1 text-xs font-bold text-ink-soft">サービス</span>
+        <a href="roumu.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">労務相談</a>
+        <a href="di.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">セミナー・研修の講師</a>
+        <a href="dx.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">DXコンサルティング</a>
+        <a href="joseikin.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">助成金申請</a>
+        <a href="tetsuzuki.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-50">各種手続き</a>
+        <a href="kisoku.html" class="py-2.5 pl-3 text-ink-soft border-b border-brand-100">就業規則の作成</a>
+        <a href="index.html#contact" class="mt-4 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-full text-center font-bold">お問い合わせ</a>
       </nav>
     </div>
   </header>
-  
-  <nav class="max-w-4xl mx-auto px-4 sm:px-6 py-4 text-sm text-gray-500">
-    <ol class="flex space-x-2"><li><a href="index.html" class="hover:text-brand-600">ホーム</a></li><li>&gt;</li><li class="font-bold text-gray-800">助成金申請</li></ol>
+
+  <nav class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2 text-sm text-ink-soft" aria-label="パンくずリスト">
+    <ol class="flex items-center gap-2">
+      <li><a href="index.html" class="hover:text-brand-700 transition">ホーム</a></li>
+      <li aria-hidden="true" class="text-brand-300">/</li>
+      <li class="font-bold text-ink">助成金申請</li>
+    </ol>
   </nav>
 
-  <main class="py-8 bg-white">
+  <main class="py-10 md:py-14 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="高解像度の事業成長と書類" class="w-full h-64 object-cover rounded-2xl mb-8 shadow-sm">
-      <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 border-l-4 border-brand-500 pl-4">助成金申請・活用サポート</h1>
-      <p class="text-lg text-gray-700 leading-relaxed mb-12">
-        助成金は「企業が従業員のためのより良い職場環境をつくること」に対する国からの強力な支援です。<br>
-        しかし、要件が複雑で申請書類も多岐にわたるため、本来もらえるはずの助成金を見落としている企業は少なくありません。当事務所が最適な助成金の診断から受給までをフルサポートいたします。
-      </p>
+    <div class="relative rounded-2xl overflow-hidden mb-10 shadow-warm">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80" alt="高解像度の事業成長と書類" class="w-full h-56 md:h-72 object-cover">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-900/45 via-transparent to-brand-600/25 mix-blend-multiply"></div>
+      </div>
+      <div class="reveal-anim mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-ink mb-6 border-l-4 border-brand-500 pl-5 text-balance">助成金申請・活用サポート</h1>
+        <p class="text-base md:text-lg text-ink-soft leading-relaxed">助成金は「企業が従業員のためのより良い職場環境をつくること」に対する国からの強力な支援です。<br>しかし、要件が複雑で申請書類も多岐にわたるため、本来もらえるはずの助成金を見落としている企業は少なくありません。当事務所が最適な助成金の診断から受給までをフルサポートいたします。</p>
+      </div>
 
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-brand-200 pb-2">ご支援の流れ</h2>
-      <ol class="space-y-4 mb-16 list-decimal list-inside text-gray-700 bg-brand-50 p-6 rounded-lg">
-        <li class="pl-2 leading-relaxed"><strong>ヒアリング・無料診断：</strong> 貴社の現状や今後の採用・育成計画をお伺いし、該当しそうな助成金をピックアップします。</li>
-        <li class="pl-2 leading-relaxed"><strong>環境整備・計画作成：</strong> 助成金受給に必須となる就業規則の改定や、労務環境の整備を事前に行います。</li>
-        <li class="pl-2 leading-relaxed"><strong>計画届の提出・取り組み実施：</strong> 行政へ計画を提出後、実際に研修の実施や制度の導入等を進めていただきます。</li>
-        <li class="pl-2 leading-relaxed"><strong>支給申請・受給：</strong> 複雑な支給申請書類を当事務所が作成・代行し、審査を経て助成金が振り込まれます。</li>
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-8 pb-2 border-b-2 border-brand-100">ご支援の流れ</h2>
+      <ol class="space-y-5 mb-16 bg-brand-50 p-7 rounded-2xl border border-brand-100">
+        <li class="flex gap-4">
+          <div class="w-9 h-9 shrink-0 bg-white border-2 border-brand-400 text-brand-700 rounded-full flex items-center justify-center font-bold text-sm">1</div>
+          <p class="text-ink-soft leading-relaxed pt-1"><strong class="text-ink">ヒアリング・無料診断：</strong>貴社の現状や今後の採用・育成計画をお伺いし、該当しそうな助成金をピックアップします。</p>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-9 h-9 shrink-0 bg-white border-2 border-brand-400 text-brand-700 rounded-full flex items-center justify-center font-bold text-sm">2</div>
+          <p class="text-ink-soft leading-relaxed pt-1"><strong class="text-ink">環境整備・計画作成：</strong>助成金受給に必須となる就業規則の改定や、労務環境の整備を事前に行います。</p>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-9 h-9 shrink-0 bg-white border-2 border-brand-400 text-brand-700 rounded-full flex items-center justify-center font-bold text-sm">3</div>
+          <p class="text-ink-soft leading-relaxed pt-1"><strong class="text-ink">計画届の提出・取り組み実施：</strong>行政へ計画を提出後、実際に研修の実施や制度の導入等を進めていただきます。</p>
+        </li>
+        <li class="flex gap-4">
+          <div class="w-9 h-9 shrink-0 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+          <p class="text-ink-soft leading-relaxed pt-1"><strong class="text-ink">支給申請・受給：</strong>複雑な支給申請書類を当事務所が作成・代行し、審査を経て助成金が振り込まれます。</p>
+        </li>
       </ol>
 
-      <div class="text-center">
-        <a href="index.html#contact" class="inline-block bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:-translate-y-1">自社に合う助成金があるか問い合わせる</a>
+      <div class="text-center mt-16">
+        <a href="index.html#contact" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-12 rounded-full shadow-warm transition transform hover:-translate-y-0.5">
+          自社に合う助成金があるか問い合わせる
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
       </div>
     </div>
   </main>
-  <footer class="bg-gray-900 text-gray-400 py-12 text-center text-sm"><p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p></footer>
+
+  <footer class="bg-ink text-brand-100/80 py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col items-center text-center gap-3 pb-8 border-b border-white/10">
+        <img src="image_95e6cb.png" alt="ロゴ" class="h-9 w-auto opacity-90">
+        <p class="text-white text-lg font-bold tracking-wide">Ａｉ社会保険労務士事務所</p>
+        <p class="text-sm text-brand-100/60">〒663-8031 兵庫県西宮市伏原町</p>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-100/50">
+        <p>&copy; 2026 Ａｉ社会保険労務士事務所. All Rights Reserved.</p>
+        <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+          <a href="index.html#about" class="hover:text-white transition">事務所案内</a>
+          <a href="index.html#greeting" class="hover:text-white transition">代表挨拶</a>
+          <a href="index.html#services" class="hover:text-white transition">サービス</a>
+          <a href="index.html#contact" class="hover:text-white transition">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('menu-toggle');
+      const panel = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      if (!btn || !panel) return;
+
+      function setOpen(open) {
+        panel.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        iconMenu.classList.toggle('hidden', open);
+        iconClose.classList.toggle('hidden', !open);
+      }
+
+      btn.addEventListener('click', function () {
+        setOpen(!panel.classList.contains('open'));
+      });
+
+      panel.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+    })();
+  </script>
+
 </body>
 </html>
