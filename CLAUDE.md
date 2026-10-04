@@ -45,5 +45,4 @@
 
 ## 作業メモ
 (進行中の作業をここに書く。区切りごとに更新する)
-- canonical / og:url が workers.dev のままになっている。
-  https://ai-sr-office.com/ への修正を検討中(sitemap.xml も確認)
+- canonical / og:url が workers.dev のままだった件 → 修正済み(push後に確認)
